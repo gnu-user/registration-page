@@ -23,7 +23,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Registration Page</title>
+    <title>Computer Science Club Registration Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Registration Page">
     <meta name="author" content="Computer Science Club">
@@ -44,7 +44,7 @@
       <div class="navbar-inner">
         <div class="container">
           <a class="brand" href="index.php">
-            Registration Page
+            Computer Science Club Registration Page
           </a>
         </div>
       </div>
