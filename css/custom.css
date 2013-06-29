@@ -18,11 +18,6 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/* Add space between navbar and container */
-body {
-    margin-top: 80px;
-}
-
 /* Fix the default font colour for alerts */
 .alert#activeinfo, .alert#alreadyactive {
     color: #505050;
