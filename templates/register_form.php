@@ -42,7 +42,44 @@
     </div>
     <div class="row">
         <div class="span8">
-            <form class="well form-horizontal" action="active.php" method="post" accept-charset="UTF-8">
+            <!--  Display an error if they entered invalid credentials -->
+            <?php
+                if (isset($_SESSION['errors']))
+                {
+                    echo '<div class="alert alert-error">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>';
+
+                    foreach ($_SESSION['errors'] as $error)
+                    {
+                        echo '<p>' . $error . '</p>';
+                    }
+                    echo '</div>';
+                }
+                else if (isset($_SESSION['new_member']))
+                {
+                    echo '<div id="active" class="alert alert-success">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong>Account Created!</strong> You are now an official CS Club member, 
+                            you may now use the username and password you provided to access club services.
+                          </div>';
+                }
+                else
+                {
+                    echo '<div id="activeinfo" class="alert alert-info">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <p>
+                                Please submit the following pieces of information about yourself to register
+                                yourself as as a new club member.
+                            </p>
+                            <p>
+                                <strong>If you do not have a passphrase</strong> please contact the 
+                                <a target="_blank" href="mailto:admin@cs-club.ca">Club Executives</a>
+                                to receive a passphrase!
+                            </p>
+                          </div>';
+                }
+            ?>
+            <form class="well form-horizontal" action="register.php" method="post" accept-charset="UTF-8">
                 <fieldset>
                     <!-- Passphrase -->
                     <div class="control-group">
