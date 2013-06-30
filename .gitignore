@@ -5,3 +5,6 @@
 
 # Ignore backup files
 *.*~
+
+# Ignore any changes to the auth file
+auth.php
