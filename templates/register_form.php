@@ -48,7 +48,7 @@
                     <div class="control-group">
                         <label for="passphrase" class="control-label"><strong>Passphrase:</strong></label>                
                         <div class="controls">
-                            <input id="passphrase" name="passphrase" required type="text" maxlength="128" pattern="^\w+$" placeholder="Enter a passphrase..."/>            
+                            <input id="passphrase" name="passphrase" required type="text" maxlength="64" pattern="^[a-z]+$" placeholder="Enter a passphrase..."/>            
                         </div>
                     </div>
                     <!--  First & Last Name -->
@@ -89,7 +89,7 @@
                     <div class="control-group">
                         <label for="password" class="control-label">Password:</label>               
                         <div class="controls">
-                            <input id="password" name="password" type="password" maxlength="31" pattern="^[a-zA-Z0-9\!\$\%\^\&amp;\*\(\)\_\?]{6,31}$" placeholder="Password..."/>              
+                            <input id="password" name="password" type="password" maxlength="31" pattern="^[a-zA-Z0-9\`\~\!\@\#\$\%\^\&amp;\*\(\)\-\_\=\+\|\&lt;\&gt;\?]{6,31}$" placeholder="Password..."/>              
                         </div>
                     </div>
                     <!-- Submit as Active User -->
