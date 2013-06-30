@@ -26,13 +26,9 @@
  * DEPENDENCIES
  * ------------
  * 
- * This template uses one of the post variables to indicate an error if the
- * criteria was not found (such as a student's email or id).
+ * This template uses an array of error messages, or a new_member session variable
+ * to display notifications.
  * 
- * $first_name
- * $last_name
- * $student_number
- * $email
  *
  */
 ?>
@@ -69,7 +65,7 @@
                             <button type="button" class="close" data-dismiss="alert">&times;</button>
                             <p>
                                 Please submit the following pieces of information about yourself to register
-                                yourself as as a new club member.
+                                as as a new club member.
                             </p>
                             <p>
                                 <strong>If you do not have a passphrase</strong> please contact the 
