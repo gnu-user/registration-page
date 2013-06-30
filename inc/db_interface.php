@@ -27,15 +27,13 @@
  *
  * http://en.wikipedia.org/wiki/Block_cipher_modes_of_operation#Electronic_codebook_.28ECB.29
  *
- * @param string $student_id The student id to salt
- * @param string $password The student's account password to salt
+ * @param string $data The data to salt
  */
-function salt_sensitive_data(&$student_id, &$password) 
+function salt_sensitive_data(&$data) 
 {         
         $salt = sha1(rand());
-        $salt = substr($salt, 0, 8);        
-        $student_id = $salt . (string) $student_id;
-        $password = substr(sha1($salt), 0, 8) . $password;
+        $salt = substr($salt, 0, 8);
+        $data = $salt . (string) $data;
 }
 
 /** 
@@ -90,7 +88,7 @@ function unique_username($mysqli, $username)
  *
  * @return boolean True if the passphrase is valid and has not already been used
  */
-function valid_passphrase($mysqli, $passphrase)
+function correct_passphrase($mysqli, $passphrase)
 {
     $match = "";
 
@@ -131,7 +129,7 @@ function valid_passphrase($mysqli, $passphrase)
  * member to the corresponding value. The keys used should be the same as in original $_POST
  * @param string $AES_KEY The AES encrypt/decrypt key for the password
  */
-function add_new_member($mysqli_conn, $data, $AES_KEY)
+function add_new_member($mysqli, $data, $AES_KEY)
 {
     /* Add the new member into the database using a prepared statement */
     if ($stmt = $mysqli->prepare("INSERT INTO ucsc_members VALUES (?, ?, AES_ENCRYPT(?, ?), ?, ?, AES_ENCRYPT(?, ?), NULL, CURDATE(), CURDATE(), 1)"))
@@ -141,7 +139,7 @@ function add_new_member($mysqli_conn, $data, $AES_KEY)
                     'ssssssss', 
                     $data['first_name'], 
                     $data['last_name'], 
-                    $data['student_id'], 
+                    $data['student_number'], 
                     $AES_KEY, 
                     $data['email'], 
                     $data['username'], 
@@ -164,7 +162,7 @@ function add_new_member($mysqli_conn, $data, $AES_KEY)
  * @param mysqli $mysqli_conn The mysqli connection object
  * @param string $passphrase The passphrase to update as used
  */
-function update_passphrase($mysqli_conn, $passphrase)
+function update_passphrase($mysqli, $passphrase)
 {
     /* Set the passphrase date_used as current date */
     if ($stmt = $mysqli->prepare("UPDATE passphrases SET date_used = CURDATE() WHERE passphrase LIKE ?"))
