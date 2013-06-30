@@ -28,7 +28,9 @@
  * 
  * This template uses an array of error messages, or a new_member session variable
  * to display notifications.
- * 
+ *
+ *  - $_SESSION['errors']
+ *  - $_SESSION['new_member'] (if new member successfully registered)
  *
  */
 ?>

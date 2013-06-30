@@ -19,6 +19,13 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/**
+ * Validate the mysql connection is successful.
+ *
+ * @package validate
+ *
+ * @param mysqli $mysqli_connection The mysqli connection object
+ */
 function valid_mysqli_connect($mysqli_connection)
 {
     if ($mysqli_connection->connect_errno)
@@ -30,6 +37,8 @@ function valid_mysqli_connect($mysqli_connection)
 
 /**
  * Validate the passphrase
+ *
+ * @package validate
  *
  * @param string $passphrase The passphrase post data
  * @return boolean TRUE if the input for is valid
@@ -46,6 +55,8 @@ function valid_passphrase($passphrase)
 /**
  * Validate the first name
  *
+ * @package validate
+ *
  * @param string $first_name the first_name post data
  * @return boolean TRUE if the input is valid
  */
@@ -60,6 +71,8 @@ function valid_first_name($first_name)
 
 /** 
  * Validate the last name
+ *
+ * @package validate
  *
  * @param string $last_name the last_name post data
  * @return boolean TRUE if the input is valid
@@ -76,6 +89,8 @@ function valid_last_name($last_name)
 /**
  * Validate the student number
  *
+ * @package validate
+ *
  * @param string $student_number the student_number post data
  * @return boolean TRUE if the input is valid
  */
@@ -90,6 +105,9 @@ function valid_student_num($student_number)
 
 /**
  * Validate the email
+ *
+ * @package validate
+ *
  * @param string $first_name the first_name post data
  * @return boolean TRUE if the input is valid
  */
@@ -103,10 +121,12 @@ function valid_email($email)
 }
 
 /**
- * Check that the user has entered valid data, do not attempt
- * to login to the account otherwise
+ * Check that the user has entered valid data, do not attempt to login to
+ * the account otherwise. The username and password are validated before 
+ * verifying if they are correct.
  *
- * Validate the username and password before verifying if they are correct
+ * @package validate
+ *
  * @param string $username the username post data
  * @return boolean TRUE if the input for the username is valid
  */
@@ -121,7 +141,10 @@ function valid_username($username)
 }
 
 /**
- * Validate the password 
+ * Validate the password
+ *
+ * @package validate
+ *
  * @param string $password the password post data
  * @return boolean TRUE if the input for the password is valid
  */

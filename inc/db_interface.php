@@ -27,6 +27,8 @@
  *
  * http://en.wikipedia.org/wiki/Block_cipher_modes_of_operation#Electronic_codebook_.28ECB.29
  *
+ * @package dbinterface
+ *
  * @param string $data The data to salt
  */
 function salt_sensitive_data(&$data) 
@@ -39,6 +41,8 @@ function salt_sensitive_data(&$data)
 /** 
  * A function which verifies that the username provided is unique and has not
  * already been used, usernames are case-insensitive.
+ *
+ * @package dbinterface
  *
  * @param mysqli $mysqli_conn The mysqli connection object
  * @param string $username The username to verify is unique
@@ -83,6 +87,8 @@ function unique_username($mysqli, $username)
  * A function which verifies that the passphrase has not already been used and is a valid
  * passphrase that was given to the individual by an executive of the club.
  *
+ * @package dbinterface
+ *
  * @param mysqli $mysqli_conn The mysqli connection object
  * @param string $passphrase The passphrase to validate
  *
@@ -124,6 +130,8 @@ function correct_passphrase($mysqli, $passphrase)
 /**
  * A function which adds a new club member to the database.
  *
+ * @package dbinterface
+ *
  * @param mysqli $mysqli_conn The mysqli connection object
  * @param array $data A dictionary mapping each required attribute of the new registered
  * member to the corresponding value. The keys used should be the same as in original $_POST
@@ -159,6 +167,8 @@ function add_new_member($mysqli, $data, $AES_KEY)
  * A function which updates the passphrase provided by the user to have the date_used field filled so 
  * the passphrase cannot be used to create another account.
  * 
+ * @package dbinterface
+ *
  * @param mysqli $mysqli_conn The mysqli connection object
  * @param string $passphrase The passphrase to update as used
  */
