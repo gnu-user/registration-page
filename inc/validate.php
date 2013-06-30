@@ -20,8 +20,13 @@
  */
 
 /**
+ * Contains a collection of methods that are used to validate POST data, ensure
+ * that all POST data has been validated before processing any of the data.
+ */
+
+
+/**
  * Validate the mysql connection is successful.
- *
  * @package validate
  *
  * @param mysqli $mysqli_connection The mysqli connection object
@@ -37,7 +42,6 @@ function valid_mysqli_connect($mysqli_connection)
 
 /**
  * Validate the passphrase
- *
  * @package validate
  *
  * @param string $passphrase The passphrase post data
@@ -54,7 +58,6 @@ function valid_passphrase($passphrase)
 
 /**
  * Validate the first name
- *
  * @package validate
  *
  * @param string $first_name the first_name post data
@@ -71,7 +74,6 @@ function valid_first_name($first_name)
 
 /** 
  * Validate the last name
- *
  * @package validate
  *
  * @param string $last_name the last_name post data
@@ -88,7 +90,6 @@ function valid_last_name($last_name)
 
 /**
  * Validate the student number
- *
  * @package validate
  *
  * @param string $student_number the student_number post data
@@ -105,10 +106,9 @@ function valid_student_num($student_number)
 
 /**
  * Validate the email
- *
  * @package validate
  *
- * @param string $first_name the first_name post data
+ * @param string $email the email post data
  * @return boolean TRUE if the input is valid
  */
 function valid_email($email)
@@ -121,10 +121,8 @@ function valid_email($email)
 }
 
 /**
- * Check that the user has entered valid data, do not attempt to login to
- * the account otherwise. The username and password are validated before 
- * verifying if they are correct.
- *
+ * Check that the user has entered a valid username. The username and password 
+ * are validated before verifying if they are correct.
  * @package validate
  *
  * @param string $username the username post data
@@ -142,7 +140,6 @@ function valid_username($username)
 
 /**
  * Validate the password
- *
  * @package validate
  *
  * @param string $password the password post data
