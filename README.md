@@ -10,7 +10,7 @@ enter their information and become registered members of the Computer Science Cl
 Any individual who is interested in joining the club must have a passphrase in order
 to become a registered member. If you are interested in becoming a member of the club
 please [contact us](mailto:admin@cs-club.ca) by email or meet us in person at a club
-meeting to receive a passphrase and become a registered memeber.
+meeting to receive a passphrase and become a registered member.
 
 
 Copyright (Really Copyleft)
