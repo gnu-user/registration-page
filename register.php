@@ -71,9 +71,17 @@ if (   isset($_POST['passphrase'])  && isset($_POST['first_name'])
 
     if (valid_student_num($_POST['student_number']))
     {
-        /* Salt the student number */
-        $data['student_number'] = $_POST['student_number'];
-        salt_sensitive_data($data['student_number']);
+        if (unqiue_student_id($mysqli_conn, $_POST['student_number'], $AES_KEY))
+        {
+            /* Salt the student number */
+            $data['student_number'] = $_POST['student_number'];
+            salt_sensitive_data($data['student_number']);
+        }
+        else
+        {
+            array_push($errors, "<strong>Student Id is already in use!</strong> Please make sure you are using the"
+                                . " correct student id or make sure you are not already a club member!");
+        }
     }
     else
     {
