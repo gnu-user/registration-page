@@ -135,8 +135,8 @@ if (   isset($_POST['passphrase'])  && isset($_POST['first_name'])
         /* Finally call a script to send the new club member a friendly
          * "Welome to CS-CLUB" email with information about the club.
          */
-        system( "scripts/welcome-email.sh " . $data['first_name'] . " " . $data['last_name'] . 
-                " " . $data['email'] . " >/dev/null &",$retval);
+        system("scripts/welcome-email.sh '" . $data['first_name'] . "' '" . $data['last_name'] . 
+               "' " . $data['email'] . " >/dev/null &",$retval);
 
         $_SESSION['new_member'] = "new_member";
         header('Location: index.php');
