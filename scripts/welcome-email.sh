@@ -32,6 +32,10 @@ subscribe to the club mailing list below or chat with us on IRC.</p>
 <ul><li><b>Server:</b> cs-club.ca</li>
 <li><b>Port:</b> 6667 or 6697 (for ssl)</li>
 <li><b>SSL Support:</b> Supports ssl on port 6697</li></ul>
+
+
+<p>Cheers,<br/>Computer Science Club</p>
+
 </body>
 </html>'
 
