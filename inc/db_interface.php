@@ -89,6 +89,40 @@ function unique_username($mysqli, $username)
     }
 }
 
+function unqiue_student_id($mysqli, $student_id, $AES_KEY)
+{
+    $in_use = 0;
+
+    /* Verify that the username is not already in use */
+    if ($stmt = $mysqli->prepare("SELECT 1 FROM ucsc_members WHERE SUBSTRING(AES_DECRYPT(student_id, ?), 9) LIKE ?"))
+    {
+        /* bind parameters for markers */
+        $stmt->bind_param('ss', $AES_KEY, $student_id);
+
+        /* execute query */
+        $stmt->execute();
+
+        /* bind result variables */
+        $stmt->bind_result($in_use);
+
+        /* fetch value */
+        $stmt->fetch();
+
+        /* close statement */
+        $stmt->close();
+    }
+
+    /* Return false if matching username found */
+    if ($in_use == 0)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
 /** 
  * A function which verifies that the passphrase has not already been used and is a valid
  * passphrase that was given to the individual by an executive of the club.
